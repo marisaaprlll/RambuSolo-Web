@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+
+# Local environment / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# XAMPP / PHP session / caches
+php_errors.log
+error_log
+*.log
+
+# Optional local runtime files
+.tmp/
+tmp/
+cache/
+
+# OS files
+Desktop.ini
