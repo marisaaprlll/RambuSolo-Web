@@ -1,0 +1,301 @@
+body.login-locked {
+  overflow: hidden;
+}
+
+.login-note {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #d9c9ae;
+}
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 17, 15, 0.82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.login-box {
+  background: #40100F;
+  color: #F5EEDD;
+  padding: 40px;
+  border-radius: 14px;
+  border-top: 4px solid #FF5733;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 380px;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.login-box h2 {
+  font-family: 'Fraunces', serif;
+  color: #F5EEDD;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #d9c9ae;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #FF5733;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5733;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.login-box button:hover {
+  background-color: #C23616;
+}
+
+.login-box button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(-24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-top: 4px solid #FF5733;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 0.9s linear infinite;
+  margin: 20px auto 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.login-success {
+  text-align: center;
+  color: #b7e3c1;
+  background: rgba(92, 200, 130, 0.12);
+  border: 1px solid rgba(92, 200, 130, 0.4);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   HALAMAN LOGIN ADMIN (login.html) — layout split-screen: panel visual
+   di kiri, kartu form login/daftar di kanan.
+   ========================================================================== */
+
+html, body.auth-shell-body {
+  height: 100%;
+}
+
+body.auth-shell-body {
+  margin: 0;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ---------- Panel visual (kiri) ---------- */
+
+.auth-visual {
+  flex: 1 1 46%;
+  position: relative;
+  background-color: var(--maroon-dark, #40100F);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  min-height: 320px;
+}
+
+.auth-visual__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(28, 17, 15, 0.55) 0%, rgba(28, 17, 15, 0.78) 55%, rgba(28, 17, 15, 0.94) 100%);
+}
+
+.auth-visual__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px clamp(24px, 5vw, 64px);
+  color: #F5EEDD;
+}
+
+.auth-visual__brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: #F5EEDD;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.auth-visual__brand span {
+  color: #FF5733;
+}
+
+.auth-visual__body {
+  max-width: 440px;
+}
+
+.auth-visual__kicker {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #C9971F;
+  margin-bottom: 14px;
+}
+
+.auth-visual__body h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  line-height: 1.15;
+  color: #F5EEDD;
+  margin: 0 0 16px;
+}
+
+.auth-visual__body p {
+  color: #e6d9c2;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+.auth-visual__back {
+  align-self: flex-start;
+  color: #e6d9c2;
+  font-weight: 600;
+  font-size: 0.92rem;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.auth-visual__back:hover {
+  opacity: 1;
+  color: #FF5733;
+  text-decoration: none;
+}
+
+/* ---------- Panel form (kanan) ---------- */
+
+.auth-form-side {
+  flex: 1 1 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FBF3E7;
+  padding: 40px 24px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.auth-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: rgba(255, 87, 51, 0.14);
+  color: #FF5733;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #d9c9ae;
+  font-size: 0.88rem;
+  margin-top: -14px;
+  margin-bottom: 22px;
+}
+
+.auth-storage-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .auth-shell {
+    flex-direction: column;
+  }
+
+  .auth-visual {
+    flex: 0 0 auto;
+    min-height: 260px;
+  }
+
+  .auth-form-side {
+    padding: 36px 20px 56px;
+  }
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rambu Solo — Tradisi Pemakaman Adat Toraja</title>
+  <meta name="description" content="Kenali Rambu Solo, upacara pemakaman adat Suku Toraja: sejarah, keunikan, tahapan tradisi, galeri foto, serta cara menghubungi kami." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <!-- NAVIGASI -->
+  <div class="navbar">
+    <div class="container">
+      <div class="brand">Rambu<span>Solo</span></div>
+      <div class="nav-right">
+        <button type="button" id="navToggle" class="nav-toggle" title="Buka menu" aria-label="Buka menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#keunikan">Keunikan</a></li>
+            <li><a href="#tradisi">Tradisi</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="masukan.html">Masukan &amp; Saran</a></li>
+            <li><a href="login.html" id="navLoginLink">Login</a></li>
+            <li id="navUserInfo" class="hidden nav-user-info">
+              <button type="button" class="nav-avatar-btn" id="navAvatarBtn" onclick="toggleNavUserMenu()" aria-haspopup="true" aria-expanded="false" title="Menu akun">
+                <span class="nav-avatar" id="navAvatar">A</span>
+              </button>
+              <div class="nav-user-menu hidden" id="navUserMenu">
+                <div class="nav-user-menu__header">
+                  <span class="nav-avatar nav-avatar--lg" id="navAvatarLg">A</span>
+                  <div>
+                    <span class="nav-user-menu__name" id="navUsername"></span>
+                    <span class="nav-user-menu__role">Admin</span>
+                  </div>
+                </div>
+                <a href="admin.html" class="nav-user-menu__item">&#9881;&#65039; Panel Admin</a>
+                <button type="button" class="nav-user-menu__item nav-user-menu__logout" onclick="logoutUser()">&#8630; Keluar</button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="header">
+           <img src="images/hero-rambu-solo.jpg" alt="Rambu Solo">
+        </div>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="section">
+      <div class="container">
+
+        <div class="split">
+          <img src="images/toraja.jpeg" alt="Upacara Rambu Solo" />
+          <div>
+            <h2>Selamat Datang di Rambu Solo</h2>
+            <div id="homeIntroText" class="editable-text">
+              <p>Rambu Solo adalah upacara pemakaman adat yang sangat penting bagi masyarakat Toraja. Ritual sakral ini menjadi bentuk penghormatan terakhir kepada orang yang telah meninggal, sekaligus mengantarkan arwahnya ke alam roh.</p>
+              <p style="margin-top:12px;">Upacara ini dikenal lewat pertunjukan seni, adu kerbau, dan prosesi pengantaran jenazah — termasuk tradisi Ma'nene (membersihkan dan mengganti pakaian jenazah leluhur) serta Ma'tinggoro Tedong (menyembelih kerbau dengan sekali tebas). Rambu Solo juga mempererat hubungan keluarga dan menjadi identitas budaya Toraja.</p>
+            </div>
+            <button type="button" class="edit-btn admin-only hidden" onclick="mulaiEdit('homeIntroText')">&#9998; Edit Teks</button>
+          </div>
+        </div>
+
+        <h3>Suku Toraja dalam Angka</h3>
+        <div class="stat-row">
+          <div class="stat-card">
+            <span class="num">~1 juta</span>
+            <span class="label">jiwa populasi Suku Toraja</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">3</span>
+            <span class="label">kabupaten utama: Tana Toraja, Toraja Utara, Mamasa</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">Abad ke-9</span>
+            <span class="label">tradisi Rambu Solo mulai dilakukan</span>
+          </div>
+        </div>
+
+        <div class="video-callout">
+          <p>Suku Toraja menetap di pegunungan utara Sulawesi Selatan dan dikenal lewat budaya uniknya: upacara kematian Rambu Solo, tradisi Ma'nene, dan rumah adat Tongkonan.</p>
+          <p style="margin-top:10px;">Untuk pemahaman yang lebih mendalam, tonton dahulu video berikut:
+            <a href="https://youtu.be/aewv7tGHRBM?si=1cjdXuDhRDJ7jN1s" target="_blank" rel="noopener">Video Tentang Rambu Solo &rarr;</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="motif motif--alt" aria-hidden="true"></div>
+
+    <!-- SEJARAH -->
+    <section id="sejarah" class="section section--alt">
+      <div class="container">
+
+        <div class="split reverse">
+          <img src="images/rambu-solo.jpeg" alt="Sejarah Rambu Solo" />
+          <div>
+            <h2>Sejarah dan Makna Rambu Solo</h2>
+            <p id="sejarahDesc" class="editable-text">Rambu Solo adalah upacara pemakaman adat masyarakat Toraja yang sudah dilakukan sejak abad ke-9, berasal dari kepercayaan leluhur Aluk To Dolo yang mengatur seluruh aspek kehidupan, termasuk kematian.</p>
+            <button type="button" class="edit-btn admin-only hidden" onclick="mulaiEdit('sejarahDesc')">&#9998; Edit Teks</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" id="tableSejarah">
+            <thead>
+              <tr><th>Aspek</th><th>Penjelasan</th></tr>
+            </thead>
+            <tbody id="tbodySejarah">
+              <tr>
+                <td class="col-label">Kepercayaan</td>
+                <td>Aluk To Dolo, kepercayaan leluhur Toraja yang mengatur seluruh aspek kehidupan termasuk kematian.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Tujuan</td>
+                <td>Mengantar roh almarhum menuju puyo (alam baka) sebagai penyempurnaan kematian.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Arti "Rambu"</td>
+                <td>Berarti asap, simbol persembahan yang dinaikkan dalam upacara.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Arti "Solo"</td>
+                <td>Berarti turun, merujuk pada waktu pelaksanaan upacara saat matahari terbenam.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Status jenazah</td>
+                <td>Selama upacara belum dilakukan, orang yang meninggal dianggap belum benar-benar meninggal.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="edit-btn admin-only hidden table-edit-btn" id="editBtnTableSejarah" onclick="mulaiEditTabel('tbodySejarah','editBtnTableSejarah')">&#9998; Edit Tabel</button>
+
+      </div>
+    </section>
+
+    <div class="motif" aria-hidden="true"></div>
+
+    <!-- KEUNIKAN -->
+    <section id="keunikan" class="section">
+      <div class="container">
+
+        <div class="split">
+          <img src="images/keunikan.jpeg" alt="Keunikan Tradisi Toraja" />
+          <div>
+            <h2>Keunikan Tradisi Kematian Suku Toraja</h2>
+            <p id="keunikanIntro" class="editable-text">Lima hal yang membuat tradisi kematian Toraja begitu khas dan dikenal luas.</p>
+            <button type="button" class="edit-btn admin-only hidden" onclick="mulaiEdit('keunikanIntro')">&#9998; Edit Teks</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" id="tableKeunikan">
+            <thead>
+              <tr><th>Keunikan</th><th>Penjelasan</th></tr>
+            </thead>
+            <tbody id="tbodyKeunikan">
+              <tr>
+                <td class="col-label">Rambu Solo</td>
+                <td>Upacara kematian besar yang mengantar roh ke alam baka; jenazah diperlakukan seperti orang hidup sampai ritual selesai.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Pemakaman tebing</td>
+                <td>Jenazah dimakamkan di gua batu dengan patung Tau-Tau sebagai penjaga.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Ma'nene</td>
+                <td>Ritual membersihkan dan mengganti pakaian jenazah leluhur sebagai bentuk penghormatan.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Pemotongan kerbau</td>
+                <td>Simbol status sosial keluarga dan penghormatan dalam upacara.</td>
+              </tr>
+              <tr>
+                <td class="col-label">Nilai sosial</td>
+                <td>Memperkuat hubungan sosial antar keluarga dan melestarikan tradisi leluhur.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="edit-btn admin-only hidden table-edit-btn" id="editBtnTableKeunikan" onclick="mulaiEditTabel('tbodyKeunikan','editBtnTableKeunikan')">&#9998; Edit Tabel</button>
+
+      </div>
+    </section>
+
+    <div class="motif motif--alt" aria-hidden="true"></div>
+
+    <!-- TRADISI -->
+    <section id="tradisi" class="section section--alt">
+      <div class="container">
+
+        <div class="split reverse">
+          <img src="images/tradisi.jpeg" alt="Tradisi Pelaksanaan Rambu Solo" />
+          <div>
+            <h2>Tradisi dan Pelaksanaan Rambu Solo</h2>
+            <p id="tradisiIntro" class="editable-text">Upacara berlangsung 3–7 hari, melibatkan keluarga besar dan seluruh masyarakat sekitar. Berikut tahapan utamanya.</p>
+            <button type="button" class="edit-btn admin-only hidden" onclick="mulaiEdit('tradisiIntro')">&#9998; Edit Teks</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" id="tableTradisi">
+            <thead>
+              <tr><th></th><th>Tahapan</th><th>Rincian</th></tr>
+            </thead>
+            <tbody id="tbodyTradisi">
+              <tr>
+                <td class="col-step">1</td>
+                <td class="col-label">Persiapan jenazah</td>
+                <td>Pembungkusan dan penghiasan jenazah sebelum prosesi dimulai.</td>
+              </tr>
+              <tr>
+                <td class="col-step">2</td>
+                <td class="col-label">Pemindahan jenazah</td>
+                <td>Jenazah dipindahkan ke tempat peristirahatan terakhir di gua atau tebing.</td>
+              </tr>
+              <tr>
+                <td class="col-step">3</td>
+                <td class="col-label">Pertunjukan adat</td>
+                <td>Pertunjukan seni dan ritual adat digelar sepanjang upacara.</td>
+              </tr>
+              <tr>
+                <td class="col-step">4</td>
+                <td class="col-label">Penyembelihan hewan</td>
+                <td>Kerbau dan babi disembelih sesuai strata sosial keluarga; makin tinggi status, makin banyak hewan kurban.</td>
+              </tr>
+              <tr>
+                <td class="col-step">5</td>
+                <td class="col-label">Puncak acara</td>
+                <td>Biasanya digelar Juli–Agustus, saat keturunan yang merantau kembali ke kampung halaman untuk mempererat gotong royong keluarga.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="edit-btn admin-only hidden table-edit-btn" id="editBtnTableTradisi" onclick="mulaiEditTabel('tbodyTradisi','editBtnTableTradisi')">&#9998; Edit Tabel</button>
+
+      </div>
+    </section>
+
+    <div class="motif motif--dark" aria-hidden="true"></div>
+
+    <!-- GALERI -->
+    <section id="galeri" class="section section--dark">
+      <div class="container">
+        <h2>Galeri Foto</h2>
+        <p class="section-lede">Dokumentasi Upacara Rambu Solo.</p>
+
+        <div class="gallery-table">
+          <div class="gallery-cell"><img src="images/gallery-01.jpeg" alt="Penyimpanan"><span class="cap">Penyimpanan</span></div>
+          <div class="gallery-cell"><img src="images/gallery-02.jpeg" alt="Melingkar"><span class="cap">Melingkar</span></div>
+          <div class="gallery-cell"><img src="images/gallery-03.jpeg" alt="Patung Tau-Tau"><span class="cap">Patung Tau-Tau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-04.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-05.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-06.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-07.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-08.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-09.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-10.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-11.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+          <div class="gallery-cell"><img src="images/gallery-12.jpeg" alt="Prosesi kerbau"><span class="cap">Prosesi kerbau</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="motif motif--to-paper" aria-hidden="true"></div>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section">
+      <div class="container">
+        <h2>Hubungi Kami</h2>
+        <p class="section-lede">Ada pertanyaan atau ingin berkunjung langsung? Hubungi kami lewat salah satu kanal berikut.</p>
+
+        <div class="contact-col contact-col--solo">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Kanal</th><th>Detail</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-label">
+                    <span class="contact-cell"><img src="images/icon-maps.jpg" alt="Lokasi" class="contact-icon">Lokasi</span>
+                  </td>
+                  <td><a id="kontakLokasiLink" href="https://maps.app.goo.gl/kBnrx1poqLJmG97s5" target="_blank" rel="noopener">Toraja, Sulawesi Selatan</a></td>
+                </tr>
+                <tr>
+                  <td class="col-label">
+                    <span class="contact-cell"><img src="images/icon-whatsapp.jpg" alt="WhatsApp" class="contact-icon">WhatsApp</span>
+                  </td>
+                  <td><a id="kontakWaLink" href="https://wa.me/6285123637230" target="_blank" rel="noopener">085123637230</a></td>
+                </tr>
+                <tr>
+                  <td class="col-label">
+                    <span class="contact-cell"><img src="images/icon-instagram.jpg" alt="Instagram" class="contact-icon">Instagram</span>
+                  </td>
+                  <td><a id="kontakInstagramLink" href="https://www.instagram.com/visittorajautara?stkn=Y2JpanlwczN6cjYx" target="_blank" rel="noopener">@visittorajautara</a></td>
+                </tr>
+                <tr>
+                  <td class="col-label">
+                    <span class="contact-cell"><img src="images/icon-youtube.png" alt="YouTube" class="contact-icon">YouTube</span>
+                  </td>
+                  <td><a id="kontakYoutubeLink" href="https://youtube.com/@torajaunik?si=G535fenjfAP3nFoP" target="_blank" rel="noopener">@Torajaunik</a></td>
+                </tr>
+                <tr>
+                  <td class="col-label">
+                    <span class="contact-cell"><img src="images/icon-email.jpg" alt="Email" class="contact-icon">Email</span>
+                  </td>
+                  <td><a id="kontakEmailLink" href="mailto:info@rambusolo.com">info@rambusolo.com</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="feedback-note admin-only hidden" style="margin-top:18px;">Ingin mengubah data kontak di atas? Kelola lewat <a href="admin.html#kontakAdmin">Panel Admin &rarr;</a></p>
+
+          <p class="feedback-note" style="margin-top:18px;">Punya masukan atau saran soal isi website ini? <a href="masukan.html">Kirim lewat halaman Masukan &amp; Saran &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong>Rambu Solo</strong> — Tradisi Toraja</p>
+  </footer>
+
+  <script src="js/auth.js?v=20260916-2"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

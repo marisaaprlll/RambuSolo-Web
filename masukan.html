@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masukan &amp; Saran — Rambu Solo</title>
+  <meta name="description" content="Tinggalkan masukan dan saran soal website Rambu Solo, tradisi pemakaman adat Toraja." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <!-- NAVIGASI -->
+  <div class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">Rambu<span>Solo</span></a>
+      <div class="nav-right">
+        <button type="button" id="navToggle" class="nav-toggle" title="Buka menu" aria-label="Buka menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="index.html#home">Beranda</a></li>
+            <li><a href="index.html#sejarah">Sejarah</a></li>
+            <li><a href="index.html#keunikan">Keunikan</a></li>
+            <li><a href="index.html#tradisi">Tradisi</a></li>
+            <li><a href="index.html#galeri">Galeri</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="masukan.html" class="is-current-page">Masukan &amp; Saran</a></li>
+            <li><a href="login.html" id="navLoginLink">Login</a></li>
+            <li id="navUserInfo" class="hidden nav-user-info">
+              <button type="button" class="nav-avatar-btn" id="navAvatarBtn" onclick="toggleNavUserMenu()" aria-haspopup="true" aria-expanded="false" title="Menu akun">
+                <span class="nav-avatar" id="navAvatar">A</span>
+              </button>
+              <div class="nav-user-menu hidden" id="navUserMenu">
+                <div class="nav-user-menu__header">
+                  <span class="nav-avatar nav-avatar--lg" id="navAvatarLg">A</span>
+                  <div>
+                    <span class="nav-user-menu__name" id="navUsername"></span>
+                    <span class="nav-user-menu__role">Admin</span>
+                  </div>
+                </div>
+                <a href="admin.html" class="nav-user-menu__item">&#9881;&#65039; Panel Admin</a>
+                <button type="button" class="nav-user-menu__item nav-user-menu__logout" onclick="logoutUser()">&#8630; Keluar</button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- MASUKAN & SARAN -->
+    <section id="masukan" class="section">
+      <div class="container">
+        <h2>Masukan &amp; Saran</h2>
+        <p class="section-lede">Punya masukan, koreksi, atau saran soal isi website ini? Kirim lewat form di bawah — masukan kamu akan tersimpan di website ini dan hanya dibaca oleh admin kami.</p>
+
+        <div class="feedback-col feedback-col--solo">
+          <form class="feedback-form" id="feedbackForm" onsubmit="return kirimMasukan(event)">
+            <label for="komentarNama">Nama</label>
+            <input type="text" id="komentarNama" placeholder="Nama kamu" required>
+
+            <label for="komentarEmail">Email</label>
+            <input type="email" id="komentarEmail" placeholder="nama@email.com" required>
+
+            <label for="komentarIsi">Komentar</label>
+            <textarea id="komentarIsi" rows="7" placeholder="Tulis masukan atau saran kamu di sini..." required></textarea>
+
+            <button type="submit">Kirim Masukan</button>
+            <p class="feedback-note">Masukan yang kamu kirim <strong>tidak</strong> dikirim ke email siapa pun — tersimpan langsung di website ini dan hanya bisa dilihat oleh admin lewat Panel Admin.</p>
+          </form>
+
+          <p id="feedbackStatus" class="feedback-status hidden"></p>
+
+          <p class="feedback-note">Mencari info kontak kami (WhatsApp, Instagram, dll)? <a href="index.html#kontak">Lihat halaman Kontak &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong>Rambu Solo</strong> — Tradisi Toraja</p>
+  </footer>
+
+  <script src="js/auth.js?v=20260916-2"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Admin — Rambu Solo</title>
+  <meta name="description" content="Panel admin untuk mengelola konten website Rambu Solo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <!-- NAVIGASI -->
+  <div class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">Rambu<span>Solo</span></a>
+      <div class="nav-right">
+        <button type="button" id="navToggle" class="nav-toggle" title="Buka menu" aria-label="Buka menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="index.html#home">Beranda</a></li>
+            <li><a href="index.html#sejarah">Sejarah</a></li>
+            <li><a href="index.html#keunikan">Keunikan</a></li>
+            <li><a href="index.html#tradisi">Tradisi</a></li>
+            <li><a href="index.html#galeri">Galeri</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="masukan.html">Masukan &amp; Saran</a></li>
+            <li><a href="login.html" id="navLoginLink">Login</a></li>
+            <li id="navUserInfo" class="hidden nav-user-info">
+              <button type="button" class="nav-avatar-btn" id="navAvatarBtn" onclick="toggleNavUserMenu()" aria-haspopup="true" aria-expanded="false" title="Menu akun">
+                <span class="nav-avatar" id="navAvatar">A</span>
+              </button>
+              <div class="nav-user-menu hidden" id="navUserMenu">
+                <div class="nav-user-menu__header">
+                  <span class="nav-avatar nav-avatar--lg" id="navAvatarLg">A</span>
+                  <div>
+                    <span class="nav-user-menu__name" id="navUsername"></span>
+                    <span class="nav-user-menu__role">Admin</span>
+                  </div>
+                </div>
+                <a href="admin.html" class="nav-user-menu__item">&#9881;&#65039; Panel Admin</a>
+                <button type="button" class="nav-user-menu__item nav-user-menu__logout" onclick="logoutUser()">&#8630; Keluar</button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section admin-hero">
+      <div class="container">
+        <span class="admin-hero__kicker">Panel Admin</span>
+        <h2 id="adminWelcome">Halo, Admin 👋</h2>
+        <p class="section-lede">Dari sini kamu bisa mengelola isi website Rambu Solo. Mode admin sudah aktif di seluruh halaman — tombol edit akan muncul otomatis saat kamu membuka bagian yang bisa diubah.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h3>Aksi Cepat</h3>
+
+        <div class="admin-card-grid">
+          <a class="admin-card" href="index.html#sejarah">
+            <span class="admin-card__icon">&#9998;</span>
+            <span class="admin-card__title">Edit Sejarah</span>
+            <span class="admin-card__desc">Ubah teks sejarah &amp; makna Rambu Solo di halaman beranda.</span>
+          </a>
+
+          <a class="admin-card" href="#kontakAdmin">
+            <span class="admin-card__icon">&#9742;</span>
+            <span class="admin-card__title">Kelola Hubungi Kami</span>
+            <span class="admin-card__desc">Lihat tabel kontak &amp; ubah nomor WhatsApp, email, dan kanal lainnya.</span>
+          </a>
+
+          <a class="admin-card" href="#masukanAdmin">
+            <span class="admin-card__icon">&#9993;</span>
+            <span class="admin-card__title">Masukan &amp; Saran</span>
+            <span class="admin-card__desc">Baca masukan yang dikirim pengunjung lewat website — hanya tampil di sini.</span>
+          </a>
+
+          <a class="admin-card" href="index.html" target="_blank" rel="noopener">
+            <span class="admin-card__icon">&#127760;</span>
+            <span class="admin-card__title">Lihat Website</span>
+            <span class="admin-card__desc">Buka tampilan publik website di tab baru.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="kontakAdmin">
+      <div class="container">
+        <h3>Kelola Hubungi Kami</h3>
+        <p class="section-lede">Data di bawah ini yang tampil di bagian &ldquo;Hubungi Kami&rdquo; pada halaman depan. Dibagi jadi 2: tabel yang sedang aktif, dan form untuk mengubah isinya.</p>
+
+        <div class="admin-step-title"><span class="admin-step-title__num">1</span> Tabel Hubungi Kami</div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Kanal</th><th>Detail</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-label">
+                  <span class="contact-cell"><img src="images/icon-maps.jpg" alt="Lokasi" class="contact-icon">Lokasi</span>
+                </td>
+                <td><a id="kontakLokasiLink" href="https://maps.app.goo.gl/kBnrx1poqLJmG97s5" target="_blank" rel="noopener">Toraja, Sulawesi Selatan</a></td>
+              </tr>
+              <tr>
+                <td class="col-label">
+                  <span class="contact-cell"><img src="images/icon-whatsapp.jpg"   alt="WhatsApp" class="contact-icon">WhatsApp</span>
+                </td>
+                <td><a id="kontakWaLink" href="https://wa.me/6285123637230" target="_blank" rel="noopener">085123637230</a></td>
+              </tr>
+              <tr>
+                <td class="col-label">
+                  <span class="contact-cell"><img src="images/icon-instagram.jpg" alt="Instagram" class="contact-icon">Instagram</span>
+                </td>
+                <td><a id="kontakInstagramLink" href="https://www.instagram.com/seputar_sulawesiselatan?igsh=MTBpYTRrd3llcGlmcg==" target="_blank" rel="noopener">@seputar_sulawesiselatan</a></td>
+              </tr>
+              <tr>
+                <td class="col-label">
+                  <span class="contact-cell"><img src="images/icon-youtube.png" alt="YouTube" class="contact-icon">YouTube</span>
+                </td>
+                <td><a id="kontakYoutubeLink" href="https://youtube.com/@torajaunik?si=G535fenjfAP3nFoP" target="_blank" rel="noopener">@Torajaunik</a></td>
+              </tr>
+              <tr>
+                <td class="col-label">
+                  <span class="contact-cell"><img src="images/icon-email.jpg" alt="Email" class="contact-icon">Email</span>
+                </td>
+                <td><a id="kontakEmailLink" href="mailto:info@rambusolo.com">info@rambusolo.com</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="admin-step-title"><span class="admin-step-title__num">2</span> Edit Isi Hubungi Kami</div>
+        <div class="admin-kontak-edit" id="editKontakBox">
+          <label for="inputLokasiTeks">Lokasi (teks yang tampil)</label>
+          <input type="text" id="inputLokasiTeks" placeholder="contoh: Toraja, Sulawesi Selatan">
+          <label for="inputLokasiUrl">Link Google Maps</label>
+          <input type="text" id="inputLokasiUrl" placeholder="contoh: https://maps.app.goo.gl/...">
+
+          <label for="inputWa">Nomor WhatsApp</label>
+          <input type="text" id="inputWa" placeholder="contoh: 085123637230">
+
+          <label for="inputInstagramTeks">Instagram (teks yang tampil)</label>
+          <input type="text" id="inputInstagramTeks" placeholder="contoh: @namaakun">
+          <label for="inputInstagramUrl">Link Instagram</label>
+          <input type="text" id="inputInstagramUrl" placeholder="contoh: https://www.instagram.com/namaakun">
+
+          <label for="inputYoutubeTeks">YouTube (teks yang tampil)</label>
+          <input type="text" id="inputYoutubeTeks" placeholder="contoh: @namachannel">
+          <label for="inputYoutubeUrl">Link YouTube</label>
+          <input type="text" id="inputYoutubeUrl" placeholder="contoh: https://youtube.com/@namachannel">
+
+          <label for="inputEmail">Email</label>
+          <input type="text" id="inputEmail" placeholder="contoh: info@rambusolo.com">
+
+          <div class="admin-kontak-edit__actions">
+            <button type="button" onclick="simpanKontak()">Simpan Perubahan</button>
+            <button type="button" class="edit-btn--cancel" onclick="bukaEditKontak()">Muat Ulang dari Tabel</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="masukanAdmin">
+      <div class="container">
+        <h3>Masukan &amp; Saran dari Pengunjung</h3>
+        <p class="section-lede">Semua masukan yang dikirim lewat halaman <a href="masukan.html">Masukan &amp; Saran</a> muncul di sini. Isinya hanya bisa dilihat lewat Panel Admin ini, tidak dikirim ke email siapa pun.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Nama</th><th>Email</th><th>Komentar</th><th>Tanggal</th><th></th></tr>
+            </thead>
+            <tbody id="masukanAdminTable">
+              <!-- diisi otomatis oleh js/admin-page.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h3>Akun Admin</h3>
+        <p class="section-lede">Website ini memakai satu akun admin tetap yang sudah disediakan — tidak ada fitur buat akun baru.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Username</th><th>Status</th></tr>
+            </thead>
+            <tbody id="adminAccountsTable">
+              <!-- diisi otomatis oleh js/admin-page.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <button type="button" class="edit-btn edit-btn--cancel" style="margin-top:18px;" onclick="logoutUser()">Keluar dari Panel Admin</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong>Rambu Solo</strong> — Tradisi Toraja</p>
+  </footer>
+
+  <script src="js/auth.js?v=20260916-2"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin-page.js"></script>
+
+</body>
+</html>
